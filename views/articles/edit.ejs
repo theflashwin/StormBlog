@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Blog</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mb-4">Edit Article</h1>
+
+    <form action="/articles/edit/<%= article.id %>" method="POST">
+        <div class = "form-group">
+            <label for = "title"> Title </label>
+            <input required type = "text" name = "title" id = "title" class = "form-control" value = "<%= article.title %>">
+        </div>
+        
+        <div class = "form-group">
+            <label for = "title"> Description </label>
+            <textarea required name="description" id="description" class="form-control"><%= article.description %></textarea>
+        </div>
+        
+        <div class = "form-group">
+            <label for = "title"> Markdown </label>
+            <textarea required name="markdown" id="markdown" class="form-control"><%= article.markdown %></textarea>
+        </div>
+        
+        <div class = "form-group">
+            <label for = "title"> Image URL </label>
+            <input required type = "text" name = "image" id = "image" class = "form-control" value = "<%= article.image %>">
+        </div>
+        
+        <a href="/" class="btn btn-secondary">Cancel</a>
+        <button type="submit" class = "btn btn-primary">Save</button>
+    </form>
+  </div>
+</body>
+</html>
